@@ -5,7 +5,7 @@ import json
 import methodes
 
 def catch_error(data_file_path):
-    # Datei wird überprüft und bei Nichtexistenz erstellt beziehungsweise repariert
+    # verifies the json-file; json-file gets created on non-existenz or gets repaired
     try:
         data = methodes.load(data_file_path)
 
@@ -30,11 +30,11 @@ def catch_error(data_file_path):
             exit()
 
 def get_data_file():
-    # Create ====================
+    # get data file path ====================
     if platform.system() == "Linux":
         # print("Linux muss noch ausgebessert werden.")
         # methodes.exitApp()
-        data_file_path = os.path.abspath("data.json") # oder os.popen("ls $PWD/data.json") # oder readlink -f data.json
+        data_file_path = os.path.abspath("data.json") # or os.popen("ls $PWD/data.json") # or readlink -f data.json
     elif platform.system() == "Windows":
         data_file_path = os.path.abspath(__file__).replace(__file__, "data.json")
     elif platform.system() == "Darwin":

@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 
-
-
-# Import-Commands =========================================
+# Import-commands =========================================
 import json
 import time
 
@@ -11,10 +9,10 @@ import fastmode
 import listmode
 import methodes
 
-# Initialisierung des Pfades der Data-File
+# Initialize the path of the data-file
 data_file_path = init_data_file.get_data_file()
 
-# Methode zum Start der Anwendung =========================
+# Method to start the application =========================
 def start_app():
     print("\nHallo.\nDu kannst dich also nicht entscheiden. Alles klar.\n")
 
@@ -42,7 +40,7 @@ def start_app():
         else:
             print("Fehler: Command wurde nicht gefoundet.\n\n")
 
-# Start der Anwendung =====================================
+# Main method - starts the application ===================
 start_app()
 
 time.sleep(2)

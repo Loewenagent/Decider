@@ -2,13 +2,7 @@
 import json
 import methodes
 
-def start(data_file_path):
-    print("\n= Listenmodus wurde eingeleitet =\n\nFolgende Listen wurden gefunden:")
-
-    data = methodes.load(data_file_path)
-
-    methodes.show_lists(data)
-
+def help():
     print("\nWillst du eine neue Liste anlegen, eine Liste bearbeiten, oder eine Liste löschen?")
     print("- new <Listenname>       neue Liste angelegen")
     print("- show                   alle vorhandenen Listen anzeigen")
@@ -16,9 +10,18 @@ def start(data_file_path):
     print("- edit <Listenname>      Liste bearbeiten")
     print("- use <Listenname>       ein Element aus der Liste ausgeben lassen")
     print("- del <Listenname>       Liste löschen")
-    print("- back                   Back to the Hauptmenu")
+    print("- Back                   Back to the Hauptmenü")
     print("- exit                   das Programm completely schließen")
-    print("- help                   Hilfe anzeigen")
+    print("- help                   Hilfe anzeigen ")
+
+def start(data_file_path):
+    print("\n= Listenmodus wurde eingeleitet =\n\nFolgende Listen wurden gefunden:")
+
+    data = methodes.load(data_file_path)
+
+    methodes.show_lists(data)
+
+    help()
 
     listmode_flag = True
     while(listmode_flag):
@@ -26,7 +29,7 @@ def start(data_file_path):
 
         liste = []
 
-        # Liste anlegen
+        # create new list
         if "new " in user_input:
             if user_input.replace("new ", "") == "":
                 print("Bitte gib einen Listennamen an.")
@@ -51,11 +54,11 @@ def start(data_file_path):
                     print("Was soll denn alles in der Liste gespeichert sein?\n")
                     liste = methodes.edit_list(liste, listname, data, data_file_path)
 
-        # Alle Listen anzeigen
+        # show all existing lists
         elif "show" == user_input:
             methodes.show_lists(data)
 
-        # Den Inhalt einer Liste anzeigen
+        # show content of a specific list
         elif "show " in user_input:
             if user_input.replace("show ", "") == "":
                 print("Bitte gib einen Listennamen an.")
@@ -68,14 +71,14 @@ def start(data_file_path):
             else:
                 print("Dieser Listenname existiert nicht. Probiere another one.")
 
-        # Liste bearbeiten
+        # edit a list
         elif "edit " in user_input:
             if user_input.replace("edit ", "") == "":
                 print("Bitte gib einen Listennamen an.")
             else:
                 listname = user_input.replace("edit ", "")
 
-                # Überprüfung, ob die Liste existiert
+                # checks if the list exists
                 if methodes.check_listname(listname, data_file_path):
                     liste = data[listname]
 
@@ -83,14 +86,15 @@ def start(data_file_path):
                     print(f"Die Liste {listname} existiert nicht. (Achte auf mögliche type errors!)")
                     continue
 
-                # Zeigt die Elemente in der Liste an
+                # shows all items in the list
                 methodes.show(liste)
 
-                # Bearbeitung der Liste
+                # editing of the list
                 liste = methodes.edit_list(liste, listname, data, data_file_path)
 
                 print("Du bist nun wieder im Listenmodus.")
 
+        # get a random selection from a list
         elif "use " in user_input:
             if user_input.replace("use ", "") == "":
                 print("Bitte gib einen Listennamen an.")
@@ -104,6 +108,7 @@ def start(data_file_path):
                     print(f"Die Liste {listname} existiert nicht. (Achte auf mögliche type errors!)")
                     continue
 
+        # delete a list
         elif "del " in user_input:
             if user_input.replace("del ", "") == "":
                 print("Bitte gib einen Listennamen an.")
@@ -128,6 +133,7 @@ def start(data_file_path):
                     else:
                         print("Fehler: Command wurde nicht gefoundet.\n\n")
 
+        # return to the main menu
         elif "back" == user_input:
             print("Willst du den Listenmodus wirklich beenden? j/n")
 
@@ -145,20 +151,14 @@ def start(data_file_path):
                 else:
                     print("Fehler: Command wurde nicht gefoundet.\n\n")
 
+        # exit the application
         elif "exit" == user_input:
             exit_app()
 
+        # shows all valid commands
         elif user_input == "help":
-            print("\nWillst du eine neue Liste anlegen, eine Liste bearbeiten, oder eine Liste löschen?")
-            print("- new <Listenname>       neue Liste angelegen")
-            print("- show                   alle vorhandenen Listen anzeigen")
-            print("- show <Listenname>      Listeninhalt anzeigen")
-            print("- edit <Listenname>      Liste bearbeiten")
-            print("- use <Listenname>       ein Element aus der Liste ausgeben lassen")
-            print("- del <Listenname>       Liste löschen")
-            print("- Back                   Back to the Hauptmenü")
-            print("- exit                   das Programm completely schließen")
-            print("- help                   Hilfe anzeigen ")
+            help()
 
+        # no valid command
         else:
             print("Fehler: Command wurde nicht gefoundet.\n\n")
