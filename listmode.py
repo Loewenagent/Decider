@@ -10,7 +10,7 @@ def help():
     print("- edit <Listenname>      Liste bearbeiten")
     print("- use <Listenname>       ein Element aus der Liste ausgeben lassen")
     print("- del <Listenname>       Liste löschen")
-    print("- Back                   Back to the Hauptmenü")
+    print("- back                   Back to the Hauptmenü")
     print("- exit                   das Programm completely schließen")
     print("- help                   Hilfe anzeigen ")
 

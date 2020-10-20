@@ -9,31 +9,96 @@ decide.py ======================================================================
 Fehler: Command wurde nicht gefoundet.\n\n           Error: Command not found.\n\n
 
 
+
 fastmode.py =========================================================================
 Valid Befehle:    Valid commands:
-- new <Element>          'Element' zur Liste hinzufügen")
-- del <Element>          'Element' aus der Liste entfernen")
-- store <Listenname>     Liste als 'Name' speichern")
-- show                   Liste anzeigen")
-- continue               Bearbeitung der Liste beenden und zufälliges Element ausgeben lassen.")
-- back                   Back to the Hauptmenü")
-- exit                   das Programm completely schließen")
-- help                   Hilfe anzeigen ")
+- new <Element>          'Element' zur Liste hinzufügen                                           - new <item>          add new 'item' to current list
+- del <Element>          'Element' aus der Liste entfernen                                        - del <item>          remove 'item' from current list
+- store <Listenname>     Liste als 'Listenname' speichern                                         - store <listname>       save current list as 'listname'
+- show                   Liste anzeigen                                                           - show                   show content of current list
+- continue               Bearbeitung der Liste beenden und zufälliges Element ausgeben lassen.    - continue               end editing of list and get a random item back
+- back                   Back to the Hauptmenü                                                    - back                   back to the main menu
+- exit                   das Programm completely schließen                                        - exit                   close the application
+- help                   Hilfe anzeigen                                                           - help                   show help
+\n= Schnellmodus wurde eingeleitet =\n      \n= Initialize fastmode =\n
+Bitte gib ein Element zum Hinzufügen an.    Please name an item to add.
+Bitte gib ein Element zum Entfernen an.     Please name an item to add.
+Bitte gib einen Listennamen ein.            Please name a list.
+Eine Liste mit diesem Namen existiert bereits, willst du sie überschreiben? j/n       A list with this name already exists. Do you want to overwrite it? y/n
+Speichervorgang...                    Saving in progress...
+Liste {listname} wurde gespeichert.   List {listname saved.
+Überschreiben der Liste abgebrochen.  Overwriting list exited
+Command wurde nicht gefoundet.        Error: Command not found
+Speichervorgang...                    Saving in progress
+Liste {listname} wurde gespeichert.   List {listname} is saved.
+Mensch funny Minjung, du hast ja gar keine Element in der Liste! Füg mal lieber noch was zu...    Well, you are a funny person, there are no items in this list yet! Better start adding some...
+Fehler: Command wurde nicht gefoundet.\n\n    Error: Command not found
+Verlasse den Schnellmodus\n                   Exit fastmode...
 
 
 
 listmode.py =========================================================================
 \nWillst du eine neue Liste anlegen, eine Liste bearbeiten, oder eine Liste löschen?    \nDo you want to create, edit or delete a list?
+- new <Listenname>       neue Liste angelegen                                           - new <listname>       create new list
+- show                   alle vorhandenen Listen anzeigen                               - show                   show all lists
+- show <Listenname>      Listeninhalt anzeigen                                          - show <listname>      show content of 'listname'
+- edit <Listenname>      Liste bearbeiten                                               - edit <listname>      edit 'listname' (captain obvious)
+- use <Listenname>       ein Element aus der Liste ausgeben lassen                      - use <listname>       get one random item from 'listname'
+- del <Listenname>       Liste löschen                                                  - del <listname>       delete 'listname'
+- back                   Back to the Hauptmenü                                          - back                 back to the main menu
+- exit                   das Programm completely schließen                              - exit                 close the application
+- help                   Hilfe anzeigen                                                 - help                 show this help page
 
 
 
 methodes.py =========================================================================
 Du hast es geschafft, mehr Listen zu löschen, als zu erstellen, deswegen gibt es jetzt keine Listen mehr.   You did it. You have deleted more lists than you have created. As a result, there are no lists anymore.
+\nGut, dann haben wir jetzt alle Sachen. Nun wird ein Element zufällig ausgewählt.                          \nWell, now we have all items together. Let's get a random item out of that list.
+Und die ausgewählte Sache iiiiiiiist: Huiuiuiui, {selection}! Hurra!\n\nJetzt viel Spaß damit!              And the selected item iiiiiiiis: Yay, {selection}! Hooray!\n\nNow have fun with it!
+Wer hätte es gedacht, es steht ja sowieso nur das eins Element in der Liste... -_-                          Oh well, who could have thought that? It's not like there was only one item in the list to begin with... -_-
+{item} wurde der Liste hinzugefügt.                                                 {item} was added to the list.
+{item} wurde aus der Liste entfernt.                                                 {item} was removed from the list.
+Sorry, das steht nicht in der Liste. (Achte auf mögliche Schreibfehler!)                Sorry, that is not something from the list. (Check for spelling errors!)
+Es sind noch keine Elemente in der Liste.                                               There are no items in the list yet.
+Bis jetzt steht nur {list[0]} in der Liste.                                            Until now, there only is {list[0]} in the list.
+Valid Befehle:                                                    Valid commands:
+- new <Element>          'Element' zur Liste hinzufügen           - new <item>          add 'item' to the list
+- del <Element>          'Element' aus der Liste entfernen        - del <item>          remove 'item' from the list
+- show                   Liste anzeigen                           - show                show current list
+- continue               Bearbeitung der Liste beenden.           - continue            stop editing of list
+- exit listmode          Listenmodus ohne Speichern verlassen     - exit listmode       exit listmode without saving
+- exit                   Application beenden                      - exit                close application
+- help                   Hilfe anzeigen                           - help                show this help message
+Bitte gib ein Element zum Hinzufügen an.                          Please name an item to add.
+Bitte gib ein Element zum Entfernen an.                           Please name an item to remove.
+Liste wird überschrieben...                                       List gets overwritten...
+Liste {listname} wurde überschrieben.                             List has been overwritten.
+Neue Liste wird angelegt...                                       Creating new list...
+Neue Liste {listname} wurde angelegt.                             Created new list.
+Liste wurde gespeichert                                           List was saved.
+Valid Befehle:                                                    Valid commands:
+- new <Element>          'Element' zur Liste hinzufügen           - new <item>          add 'item' to the list
+- del <Element>          'Element' aus der Liste entfernen        - del <item>          remove 'item' from the list
+- show                   Liste anzeigen                           - show                show current list
+- continue               Bearbeitung der Liste beenden.           - continue            stop editing of list
+- exit listmode          Listenmodus ohne Speichern verlassen     - exit listmode       exit listmode without saving
+- exit                   Application beenden                      - exit                close application
+- help                   Hilfe anzeigen                           - help                show this help message
+Fehler: Command wurde nicht gefoundet.\n\n                        Error: Command not found.\n\n
+Willst du das Programm wirklich beenden? j/n                      Do you really want to close the application? y/n
+Alter, du Kek. Jetzt beendet sich das Programm lol.               Well, there goes your application lol.
+Beendigung abgebrochen                                            Exit exited
+Fehler: Command wurde nicht gefoundet.\n\n                        Error: Command not found.\n\n
 
 
 
 init_data_file.py
 Es wurde keine Listen-Datei gefunden. Eine neue wird erstellt.    There was no list-file found. A new one shall be created now.
+{"essen": ["apfel", "birne", "banane"], "beschäftigungen": ["zocken", "anime schauen", "masturbieren"]}       {"food": ["apple", "pear", "banana"], "activity": ["gaming", "watching anime", "masturbating"]}
+Ne äh, irgendwie ging das nicht, mach mal ne eigene, du Kek.            Nope, didn't work for some reason, create one for yourself.
+Jo, die Listendatei ist örgendwie puttputt gegangen, deswegen wird sie nun zurückgesetzt.     You know, the list file is broken somehow, so it's getting reset.
+Ja ne, ging nich so ganz, musst du selber reparieren. Lol.              Nope, reset didn't work because of reasons, go repair it alone. Lol.
+Mac finden wir doof, deswegen geht das nicht.                       Mac is whack, so we don't support it.
 
 
 
@@ -46,15 +111,15 @@ Kein Problem, dafür gibt es doch jetzt diese Scheiße:   No prob, as there is t
 Der-Für-Dich-Entscheider!     The-for-you-decider
 
 ## Installation
-Entpacke die Zip-Datei (falls du es noch nicht getan hast) und... das wars.
+Entpacke die Zip-Datei (falls du es noch nicht getan hast) und... das wars.   Just extract everything from the .zip file (if you didn't do that already) and ... voilà !
 
 ## Usage
-- Doppel-klicke die Datei "decide.py"
-- öffne eine CMD oder ein vergleichbares Terminal und führe die Datei dort aus, falls du weißt, wie das geht.
+- Doppel-klicke die Datei "decide.py"     Double-click "decide.py"
+- öffne eine CMD oder ein vergleichbares Terminal und führe die Datei dort aus, falls du weißt, wie das geht.     open a CMD or something similiar and execute "decide.py" in there, if you know how to, of course.
 
 ## Contributing
-Änderungsvorschläge sind erwünscht. Bitte schreibt uns auf Discord, falls ihr einen Fehler bemerkt (am besten natürlich mit einer Erklärung, was ihr gemacht habt bzw. was zum Fehler geführt hat, damit wir den Fehler reproduzieren und beheben können).
+Änderungsvorschläge sind erwünscht. Bitte öffnet einen Issue in Github, falls ihr einen Fehler bemerkt (am besten natürlich mit einer Erklärung, was ihr gemacht habt bzw. was zum Fehler geführt hat, damit wir den Fehler reproduzieren und beheben können).
+Suggestions are welcome. Please open an Issue on Github if you notice an error (you should explain what you did to be able to reproduce it).
 
-
-## Lizenz
-Alle Rechte vorbehalten.
+## Lizenz       ## License
+Alle Rechte vorbehalten.    All rights reserved.

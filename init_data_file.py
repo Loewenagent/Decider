@@ -32,9 +32,7 @@ def catch_error(data_file_path):
 def get_data_file():
     # get data file path ====================
     if platform.system() == "Linux":
-        # print("Linux muss noch ausgebessert werden.")
-        # methodes.exitApp()
-        data_file_path = os.path.abspath("data.json") # or os.popen("ls $PWD/data.json") # or readlink -f data.json
+        data_file_path = os.path.abspath("data.json")
     elif platform.system() == "Windows":
         data_file_path = os.path.abspath(__file__).replace(__file__, "data.json")
     elif platform.system() == "Darwin":
