@@ -108,7 +108,7 @@ Du hast tausende Sachen, die du machen könntest, kannst dich aber nicht entsche
 Es ist gleich Mittagessen-Zeit, aber du weißt nicht, was du essen sollst?               Dinner will be soon but don't know what to eat?
 Oder du stellst dir die alles entscheidende Frage: Ist Eistee Pfirsich oder Eistee Zitrone besser?    Or the most important question: Which is better, peach or lemon ice tea?
 Kein Problem, dafür gibt es doch jetzt diese Scheiße:   No prob, as there is this piece of shit now.
-Der-Für-Dich-Entscheider!     The-for-you-decider
+Der-Für-Dich-Entscheider!     The-for-you-decider!
 
 ## Installation
 Entpacke die Zip-Datei (falls du es noch nicht getan hast) und... das wars.   Just extract everything from the .zip file (if you didn't do that already) and ... voilà !
@@ -116,6 +116,14 @@ Entpacke die Zip-Datei (falls du es noch nicht getan hast) und... das wars.   Ju
 ## Usage
 - Doppel-klicke die Datei "decide.py"     Double-click "decide.py"
 - öffne eine CMD oder ein vergleichbares Terminal und führe die Datei dort aus, falls du weißt, wie das geht.     open a CMD or something similiar and execute "decide.py" in there, if you know how to, of course.
+
+## TODO
+- Dokumentation                                                             Documentatation
+- Befehl "use" passt nicht so ganz                                          command "use" needs renaming
+- Vorschlag: Layout (z.B. größerer Abstand bei nicht gefundenem Befehl)     Suggestion: Layout(e.g. bigger distance for not found command)
+- Vorschlag: farbiges Intro                                                 Suggestion: colored Intro
+- Vorschlag: Fortschrittsanzeige                                            Suggestion: progress bar
+- Zeilen updaten statt neu printen (z.B. Fortschrittsanzeige oder ">> ")    Update lines instead of just printing them new (e.g. progress bar or ">> ")
 
 ## Contributing
 Änderungsvorschläge sind erwünscht. Bitte öffnet einen Issue in Github, falls ihr einen Fehler bemerkt (am besten natürlich mit einer Erklärung, was ihr gemacht habt bzw. was zum Fehler geführt hat, damit wir den Fehler reproduzieren und beheben können).
