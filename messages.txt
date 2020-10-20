@@ -1,0 +1,60 @@
+decide.py =========================================================================
+\nHallo.\nDu kannst dich also nicht entscheiden. Alles klar.\n    \nHello. \nYou can't decide what to do. Alright.\n
+\nWillst den Schnellmodus verwenden, oder Listen erstellen und bearbeiten?
+- fastmode:      Schnellmodus       - fastmode:      Opens fastmode
+- listmode:      Listenmodus        - listmode:      Opens an advanced utility for managing lists
+- exit:          Beenden            - exit:          Exit the application
+- help           Hilfe anzeigen     - help:          Show help
+
+Fehler: Command wurde nicht gefoundet.\n\n           Error: Command not found.\n\n
+
+
+fastmode.py =========================================================================
+Valid Befehle:    Valid commands:
+- new <Element>          'Element' zur Liste hinzufügen")
+- del <Element>          'Element' aus der Liste entfernen")
+- store <Listenname>     Liste als 'Name' speichern")
+- show                   Liste anzeigen")
+- continue               Bearbeitung der Liste beenden und zufälliges Element ausgeben lassen.")
+- back                   Back to the Hauptmenü")
+- exit                   das Programm completely schließen")
+- help                   Hilfe anzeigen ")
+
+
+
+listmode.py =========================================================================
+\nWillst du eine neue Liste anlegen, eine Liste bearbeiten, oder eine Liste löschen?    \nDo you want to create, edit or delete a list?
+
+
+
+methodes.py =========================================================================
+Du hast es geschafft, mehr Listen zu löschen, als zu erstellen, deswegen gibt es jetzt keine Listen mehr.   You did it. You have deleted more lists than you have created. As a result, there are no lists anymore.
+
+
+
+init_data_file.py
+Es wurde keine Listen-Datei gefunden. Eine neue wird erstellt.    There was no list-file found. A new one shall be created now.
+
+
+
+README.md =========================================================================
+# Der-Für-Dich-Entscheider    # The-for-you-decider
+Du hast tausende Sachen, die du machen könntest, kannst dich aber nicht entscheiden?    You have thousands of things you could do but can't decide it for yourself?
+Es ist gleich Mittagessen-Zeit, aber du weißt nicht, was du essen sollst?               Dinner will be soon but don't know what to eat?
+Oder du stellst dir die alles entscheidende Frage: Ist Eistee Pfirsich oder Eistee Zitrone besser?    Or the most important question: Which is better, peach or lemon ice tea?
+Kein Problem, dafür gibt es doch jetzt diese Scheiße:   No prob, as there is this piece of shit now.
+Der-Für-Dich-Entscheider!     The-for-you-decider
+
+## Installation
+Entpacke die Zip-Datei (falls du es noch nicht getan hast) und... das wars.
+
+## Usage
+- Doppel-klicke die Datei "decide.py"
+- öffne eine CMD oder ein vergleichbares Terminal und führe die Datei dort aus, falls du weißt, wie das geht.
+
+## Contributing
+Änderungsvorschläge sind erwünscht. Bitte schreibt uns auf Discord, falls ihr einen Fehler bemerkt (am besten natürlich mit einer Erklärung, was ihr gemacht habt bzw. was zum Fehler geführt hat, damit wir den Fehler reproduzieren und beheben können).
+
+
+## Lizenz
+Alle Rechte vorbehalten.
