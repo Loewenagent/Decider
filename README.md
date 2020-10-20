@@ -25,7 +25,7 @@ Entpacke die Zip-Datei (falls du es noch nicht getan hast) und... das wars.
 
 ## Contributing
 
-Änderungsvorschläge sind erwünscht. Bitte schreibt uns auf Discord, falls ihr einen Fehler bemerkt am besten natürlich mit einer Erklärung, was ihr gemacht habt bzw. was zum Fehler geführt hat, damit wir den Fehler reproduzieren und beheben können).
+Änderungsvorschläge sind erwünscht. Bitte schreibt uns auf Discord, falls ihr einen Fehler bemerkt (am besten natürlich mit einer Erklärung, was ihr gemacht habt bzw. was zum Fehler geführt hat, damit wir den Fehler reproduzieren und beheben können).
 
 
 ## Lizenz
