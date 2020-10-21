@@ -9,24 +9,30 @@ The-for-you-decider!
 [Python 3](https://www.python.org/download/releases/3.0/)
 
 ## Installation
-Just extract everything from the .zip file (if you didn't do that already) and ... voilà !
+### Windows
+- Install Python 3 through the Microsoft Store or from the official Python website. (s. Requirements)
+- Download the archive from the [main](https://github.com/Loewenagent/Decider/archive/main.zip) the [releases](https://github.com/Loewenagent/Decider/releases) page.
+- Extract it with some archive manager (e.g. Winrar).
+### Linux
+- Install Python 3 through your respective package manager.
+- Get the source code via
+1. ```$ git clone https://github.com/Loewenagent/Decider```
+2. the archive from [main](https://github.com/Loewenagent/Decider/archive/main.zip) or the [releases](https://github.com/Loewenagent/Decider/releases) page. After that, you extract everything from the archive in a folder.
 
 ## Usage
 
 ### Windows
-- Install Python 3 through the Microsoft Store or from the official Python website. (s. Requirements)
 - Double-click "decide.py".
 - Open a CMD or something similiar and execute "decide.py" in there, if you know how to, of course.
 
 ### Linux
-- Install Python 3 through your respective package manager.
 - Execute "decide.py" in an IDE or
 - in the terminal:
-```sh
+```
 $ python decide.py
 ```
 or
-```sh
+```
 $ chmod +x decide.py
 $ ./decide.py
 ```
