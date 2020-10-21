@@ -14,14 +14,14 @@ data_file_path = init_data_file.get_data_file()
 
 # Method to start the application =========================
 def start_app():
-    print("\nHallo.\nDu kannst dich also nicht entscheiden. Alles klar.\n")
+    print("\nHello. \nYou can't decide what to do. Alright.\n")
 
     while(True):
-        print("\nWillst den Schnellmodus verwenden, oder Listen erstellen und bearbeiten?")
-        print("- fastmode:      Schnellmodus")
-        print("- listmode:      Listenmodus")
-        print("- exit:          Beenden")
-        print("- help           Hilfe anzeigen")
+        print("\nDo you want to use fastmode or create and edit lists?")
+        print("- fastmode:      Opens fastmode")
+        print("- listmode:      Opens an advanced utility for managing lists")
+        print("- exit:          Exit the application")
+        print("- help           Show this help message")
 
         user_input = input("\n>> ")
 
@@ -38,7 +38,7 @@ def start_app():
             continue
 
         else:
-            print("Fehler: Command wurde nicht gefoundet.\n\n")
+            print("Error: Command not found.\n\n")
 
 # Main method - starts the application ===================
 start_app()

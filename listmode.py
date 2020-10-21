@@ -3,19 +3,19 @@ import json
 import methodes
 
 def help():
-    print("\nWillst du eine neue Liste anlegen, eine Liste bearbeiten, oder eine Liste löschen?")
-    print("- new <Listenname>       neue Liste angelegen")
-    print("- show                   alle vorhandenen Listen anzeigen")
-    print("- show <Listenname>      Listeninhalt anzeigen")
-    print("- edit <Listenname>      Liste bearbeiten")
-    print("- use <Listenname>       ein Element aus der Liste ausgeben lassen")
-    print("- del <Listenname>       Liste löschen")
-    print("- back                   Back to the Hauptmenü")
-    print("- exit                   das Programm completely schließen")
-    print("- help                   Hilfe anzeigen ")
+    print("\nDo you want to create, edit or delete a list?")
+    print("- new <listname>       create new list")
+    print("- show                 show all lists")
+    print("- show <listname>      show content of 'listname'")
+    print("- edit <listname>      edit 'listname' (captain obvious)")
+    print("- use <listname>       get one random item from 'listname'")
+    print("- del <listname>       delete 'listname'")
+    print("- back                 back to the main menu")
+    print("- exit                 close the application")
+    print("- help                 show this help message")
 
 def start(data_file_path):
-    print("\n= Listenmodus wurde eingeleitet =\n\nFolgende Listen wurden gefunden:")
+    print("\n= Initialize listmode =\n\nFollowing lists were found:")
 
     data = methodes.load(data_file_path)
 
@@ -32,26 +32,26 @@ def start(data_file_path):
         # create new list
         if "new " in user_input:
             if user_input.replace("new ", "") == "":
-                print("Bitte gib einen Listennamen an.")
+                print("Please name a listname.")
             else:
                 listname = user_input.replace("new ", "")
 
                 if methodes.check_listname(listname, data_file_path):
-                    user_input = input("Eine Liste mit diesem Namen existiert bereits, willst du sie überschreiben? j/n ")
+                    user_input = input("A list with this name already exists, do you want to overwrite it? y/n")
 
                     while(True):
                         if user_input == "j":
-                            print("Was soll denn alles in der Liste gespeichert sein?\n")
+                            print("What should be stored in the list?\n")
                             liste = methodes.edit_list(liste, listname, data, data_file_path)
                             break
                         elif user_input == "n":
-                            print("Überschreiben der Liste abgebrochen.")
+                            print("Exited overwriting list.")
                             break
                         else:
-                            print("Command wurde nicht gefoundet.")
+                            print("Error: Command not found")
 
                 else:
-                    print("Was soll denn alles in der Liste gespeichert sein?\n")
+                    print("What should be stored in the list?\n")
                     liste = methodes.edit_list(liste, listname, data, data_file_path)
 
         # show all existing lists
@@ -61,7 +61,7 @@ def start(data_file_path):
         # show content of a specific list
         elif "show " in user_input:
             if user_input.replace("show ", "") == "":
-                print("Bitte gib einen Listennamen an.")
+                print("Please give a listname.")
             else:
                 listname = user_input.replace("show ", "")
 
@@ -69,12 +69,12 @@ def start(data_file_path):
                 liste = data[listname]
                 methodes.show(liste)
             else:
-                print("Dieser Listenname existiert nicht. Probiere another one.")
+                print("A list with this name doesn't exist. Try another name.")
 
         # edit a list
         elif "edit " in user_input:
             if user_input.replace("edit ", "") == "":
-                print("Bitte gib einen Listennamen an.")
+                print("Please give a listname.")
             else:
                 listname = user_input.replace("edit ", "")
 
@@ -83,7 +83,7 @@ def start(data_file_path):
                     liste = data[listname]
 
                 else:
-                    print(f"Die Liste {listname} existiert nicht. (Achte auf mögliche type errors!)")
+                    print(f"A list with this name doesn't exist. Try another name.")
                     continue
 
                 # shows all items in the list
@@ -92,12 +92,12 @@ def start(data_file_path):
                 # editing of the list
                 liste = methodes.edit_list(liste, listname, data, data_file_path)
 
-                print("Du bist nun wieder im Listenmodus.")
+                print("You are in listmode again.")
 
         # get a random selection from a list
         elif "use " in user_input:
             if user_input.replace("use ", "") == "":
-                print("Bitte gib einen Listennamen an.")
+                print("Please give a listname.")
             else:
                 listname = user_input.replace("use ", "")
 
@@ -105,17 +105,17 @@ def start(data_file_path):
                     methodes.random_selector(liste)
 
                 else:
-                    print(f"Die Liste {listname} existiert nicht. (Achte auf mögliche type errors!)")
+                    print(f"A list with this name doesn't exist. Try another name.")
                     continue
 
         # delete a list
         elif "del " in user_input:
             if user_input.replace("del ", "") == "":
-                print("Bitte gib einen Listennamen an.")
+                print("Please give a listname.")
             else:
                 listname = user_input.replace("del ", "")
 
-                print("Willst du die Liste wirklich löschen? j/n")
+                print("Do you really want to delete the list? y/n")
 
                 while(True):
                     user_input = input(">> ")
@@ -123,19 +123,19 @@ def start(data_file_path):
                     if user_input == "j":
                         data.pop(listname)
                         methodes.save(data, data_file_path)
-                        print("Alda Malaga, die Liste wurde gelöscht.")
+                        print("Well, the list has been deleted.")
                         break
 
                     elif user_input == "n":
-                        print("Löschvorgang abgebrochen.")
+                        print("Exited deletion.")
                         break
 
                     else:
-                        print("Fehler: Command wurde nicht gefoundet.\n\n")
+                        print("Error: Command not found\n\n")
 
         # return to the main menu
         elif "back" == user_input:
-            print("Willst du den Listenmodus wirklich beenden? j/n")
+            print("Do you really want to exit listmode? y/n")
 
             while(True):
                 user_input = input(">> ")
@@ -145,11 +145,11 @@ def start(data_file_path):
                     break
 
                 elif user_input == "n":
-                    print("Beendigung abgebrochen")
+                    print("Exit existed")
                     break
 
                 else:
-                    print("Fehler: Command wurde nicht gefoundet.\n\n")
+                    print("Error: Command not found\n\n")
 
         # exit the application
         elif "exit" == user_input:
@@ -161,4 +161,4 @@ def start(data_file_path):
 
         # no valid command
         else:
-            print("Fehler: Command wurde nicht gefoundet.\n\n")
+            print("Error: Command not found\n\n")

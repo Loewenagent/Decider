@@ -5,14 +5,11 @@ Or the most important question: Which is better, peach or lemon ice tea?
 No prob, as there is this piece of shit now.
 The-for-you-decider!
 
-
 ## Voraussetzungen
 [Python 3](https://www.python.org/download/releases/3.0/)
 
-
 ## Installation
 Just extract everything from the .zip file (if you didn't do that already) and ... voilà !
-
 
 ## Usage
 - Double-click "decide.py"
@@ -28,7 +25,6 @@ Just extract everything from the .zip file (if you didn't do that already) and .
 
 ## Contributing
 Suggestions are welcome. Please open an Issue on Github if you notice an error (you should explain what you did to be able to reproduce it).
-
 
 ## License
 All rights reserved.

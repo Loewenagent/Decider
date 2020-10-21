@@ -18,7 +18,7 @@ def save(data, data_file_path):
 # shows all lists
 def show_lists(data):
     if len(data.keys()) == 0:
-        print("Du hast es geschafft, mehr Listen zu löschen, als zu erstellen, deswegen gibt es jetzt keine Listen mehr.")
+        print("You did it. You have deleted more lists than you have created. As a result, there are no lists anymore.")
     else:
         for element in data.keys():
             print(f"- {element}")
@@ -35,21 +35,21 @@ def check_listname(listname, data_file_path):
 
 # selects a random item from a list and presents it
 def random_selector(liste):
-    print("\nGut, dann haben wir jetzt alle Sachen. Nun wird ein Element zufällig ausgewählt.")
+    print("\nWell, now we have all items together. Let's get a random item out of that list.")
 
     # Ein zufälliger Index wird ermittelt und das Ergebnis ausgegeben
     selection = liste[random.randint(0, len(liste) - 1)]
 
-    print(f"Und die ausgewählte Sache iiiiiiiist: Huiuiuiui, {selection}! Hurra!\n\nJetzt viel Spaß damit!")
+    print(f"And the selected item iiiiiiiis: Yay, {selection}! Hooray!\n\nNow have fun with it!")
 
     if len(liste) == 1:
-        print("Wer hätte es gedacht, es steht ja sowieso nur das eins Element in der Liste... -_-")
+        print("Oh well, who could have thought that? It's not like there was only one item in the list to begin with... -_-")
 
 # adds a new item to a list
 def new_element(liste, element):
     element = element.replace("new ", "")
     liste.append(element)
-    print(f"{element} wurde der Liste hinzugefügt.")
+    print(f"{item} was added to the list.")
     return liste
 
 # deletes an item from a list
@@ -58,36 +58,36 @@ def del_element(liste, element):
 
     if element in liste:
         liste.remove(element)
-        print(f"{element} wurde aus der Liste entfernt.")
+        print(f"{item} was removed from the list.")
     else:
-        print("Sorry, das steht nicht in der Liste. (Achte auf mögliche Schreibfehler!)")
+        print("Sorry, that is not something from the list. (Check for spelling errors!)")
 
     return liste
 
 # shows all items of a list
 def show(liste):
     if len(liste) == 0:
-        print("Es sind noch keine Elemente in der Liste.")
+        print("There are no items in the list yet.")
     elif len(liste) == 1:
-        print(f"Bis jetzt steht nur {liste[0]} in der Liste.")
+        print(f"Until now, there only is {list[0]} in the list.")
     else:
-        print("\nIn der Liste stehen bis jetzt:")
+        print("\nThese items are in the list so far:")
 
         for element in liste:
-            print(f"- {element}")
+            print(f"- {item}")
 
         print("")
 
 # general method for editing a list
 def edit_list(liste, listname, data, data_file_path):
-    print("Valid Befehle:")
-    print("- new <Element>          'Element' zur Liste hinzufügen")
-    print("- del <Element>          'Element' aus der Liste entfernen")
-    print("- show                   Liste anzeigen")
-    print("- continue               Bearbeitung der Liste beenden.")
-    print("- exit listmode          Listenmodus ohne Speichern verlassen")
-    print("- exit                   Application beenden")
-    print("- help                   Hilfe anzeigen ")
+    print("Valid commands:")
+    print("- new <item>          add 'item' to the list")
+    print("- del <item>          remove 'item' from the list")
+    print("- show                   show current list")
+    print("- continue               stop editing of list")
+    print("- exit listmode          exit listmode without saving")
+    print("- exit                   close application")
+    print("- help                   show this help message")
 
     while(True):
         user_input = input("\n>> ")
@@ -95,7 +95,7 @@ def edit_list(liste, listname, data, data_file_path):
         # add a new item
         if "new " in user_input:
             if user_input.replace("new ", "") == "":
-                print("Bitte gib ein Element zum Hinzufügen an.")
+                print("Please name an item to add.")
                 continue
             else:
                 liste = new_element(liste, user_input)
@@ -103,7 +103,7 @@ def edit_list(liste, listname, data, data_file_path):
         # delete an item
         elif "del " in user_input:
             if user_input.replace("del ", "") == "":
-                print("Bitte gib ein Element zum Entfernen an.")
+                print("Please name an item to remove.")
                 continue
             else:
                 liste = del_element(liste, user_input)
@@ -115,18 +115,18 @@ def edit_list(liste, listname, data, data_file_path):
         # save list and return to the listmode menu
         elif user_input == "continue":
             if listname in data:
-                print("Liste wird überschrieben...")
+                print("List gets overwritten...")
                 data[listname] = liste
-                print(f"Liste {listname} wurde überschrieben.")
+                print(f"List {listname} has been overwritten.")
 
             else:
-                print("Neue Liste wird angelegt...")
+                print("Creating new list...")
                 data.update({listname: liste})
-                print(f"Neue Liste {listname} wurde angelegt.")
+                print(f"Created new list {listname}.")
 
             save(data, data_file_path)
 
-            print("Liste wurde gespeichert")
+            print("List was saved.")
 
             break
 
@@ -141,36 +141,36 @@ def edit_list(liste, listname, data, data_file_path):
 
         # shows all valid commands
         elif user_input == "help":
-            print("Valid Befehle:")
-            print("- new <Element>          'Element' zur Liste hinzufügen")
-            print("- del <Element>          'Element' aus der Liste entfernen")
-            print("- show                   Liste anzeigen")
-            print("- continue               Bearbeitung der Liste beenden.")
-            print("- exit listmode          Listenmodus ohne Speichern verlassen")
-            print("- exit                   Application beenden")
-            print("- help                   Hilfe anzeigen")
+            print("Valid commands:")
+            print("- new <item>          add 'item' to the list")
+            print("- del <item>          remove 'item' from the list")
+            print("- show                   show current list")
+            print("- continue               stop editing of list")
+            print("- exit listmode          exit listmode without saving")
+            print("- exit                   close application")
+            print("- help                   show this help message")
 
         # no valid command
         else:
-            print("Fehler: Command wurde nicht gefoundet.\n\n")
+            print("Error: Command not found.\n\n")
 
     return liste
 
 # method to exit the application
 def exit_app():
-    print("Willst du das Programm wirklich beenden? j/n")
+    print("Do you really want to close the application? y/n")
 
     while(True):
         user_input = input(">> ")
 
         if user_input == "j":
-            print("Alter, du Kek. Jetzt beendet sich das Programm lol.")
+            print("Well, there goes your application lol.")
             time.sleep(2)
             exit(0)
 
         elif user_input == "n":
-            print("Beendigung abgebrochen")
+            print("Exit exited")
             break
 
         else:
-            print("Fehler: Command wurde nicht gefoundet.\n\n")
+            print("Error: Command not found.\n\n")

@@ -1,10 +1,10 @@
 decide.py =========================================================================
 \nHallo.\nDu kannst dich also nicht entscheiden. Alles klar.\n    \nHello. \nYou can't decide what to do. Alright.\n
-\nWillst den Schnellmodus verwenden, oder Listen erstellen und bearbeiten?
+\nWillst den Schnellmodus verwenden, oder Listen erstellen und bearbeiten?    \nDo you want to use fastmode or create and edit lists?
 - fastmode:      Schnellmodus       - fastmode:      Opens fastmode
 - listmode:      Listenmodus        - listmode:      Opens an advanced utility for managing lists
 - exit:          Beenden            - exit:          Exit the application
-- help           Hilfe anzeigen     - help:          Show help
+- help           Hilfe anzeigen     - help:          Show this help message
 
 Fehler: Command wurde nicht gefoundet.\n\n           Error: Command not found.\n\n
 
@@ -12,42 +12,65 @@ Fehler: Command wurde nicht gefoundet.\n\n           Error: Command not found.\n
 
 fastmode.py =========================================================================
 Valid Befehle:    Valid commands:
-- new <Element>          'Element' zur Liste hinzufügen                                           - new <item>          add new 'item' to current list
-- del <Element>          'Element' aus der Liste entfernen                                        - del <item>          remove 'item' from current list
+- new <Element>          'Element' zur Liste hinzufügen                                           - new <item>             add new 'item' to current list
+- del <Element>          'Element' aus der Liste entfernen                                        - del <item>             remove 'item' from current list
 - store <Listenname>     Liste als 'Listenname' speichern                                         - store <listname>       save current list as 'listname'
 - show                   Liste anzeigen                                                           - show                   show content of current list
 - continue               Bearbeitung der Liste beenden und zufälliges Element ausgeben lassen.    - continue               end editing of list and get a random item back
 - back                   Back to the Hauptmenü                                                    - back                   back to the main menu
 - exit                   das Programm completely schließen                                        - exit                   close the application
-- help                   Hilfe anzeigen                                                           - help                   show help
+- help                   Hilfe anzeigen                                                           - help                   show this help message
 \n= Schnellmodus wurde eingeleitet =\n      \n= Initialize fastmode =\n
 Bitte gib ein Element zum Hinzufügen an.    Please name an item to add.
-Bitte gib ein Element zum Entfernen an.     Please name an item to add.
+Bitte gib ein Element zum Entfernen an.     Please name an item to delete.
 Bitte gib einen Listennamen ein.            Please name a list.
 Eine Liste mit diesem Namen existiert bereits, willst du sie überschreiben? j/n       A list with this name already exists. Do you want to overwrite it? y/n
 Speichervorgang...                    Saving in progress...
-Liste {listname} wurde gespeichert.   List {listname saved.
-Überschreiben der Liste abgebrochen.  Overwriting list exited
-Command wurde nicht gefoundet.        Error: Command not found
+Liste {listname} wurde gespeichert.   List {listname} saved.
+Überschreiben der Liste abgebrochen.  Overwriting list exited.
+Command wurde nicht gefoundet.        Error: Command not found.
 Speichervorgang...                    Saving in progress
 Liste {listname} wurde gespeichert.   List {listname} is saved.
 Mensch funny Minjung, du hast ja gar keine Element in der Liste! Füg mal lieber noch was zu...    Well, you are a funny person, there are no items in this list yet! Better start adding some...
-Fehler: Command wurde nicht gefoundet.\n\n    Error: Command not found
-Verlasse den Schnellmodus\n                   Exit fastmode...
+Fehler: Command wurde nicht gefoundet.\n\n    Error: Command not found.\n\n
+Verlasse den Schnellmodus\n                   Exit fastmode\n
 
 
 
 listmode.py =========================================================================
 \nWillst du eine neue Liste anlegen, eine Liste bearbeiten, oder eine Liste löschen?    \nDo you want to create, edit or delete a list?
 - new <Listenname>       neue Liste angelegen                                           - new <listname>       create new list
-- show                   alle vorhandenen Listen anzeigen                               - show                   show all lists
+- show                   alle vorhandenen Listen anzeigen                               - show                 show all lists
 - show <Listenname>      Listeninhalt anzeigen                                          - show <listname>      show content of 'listname'
 - edit <Listenname>      Liste bearbeiten                                               - edit <listname>      edit 'listname' (captain obvious)
 - use <Listenname>       ein Element aus der Liste ausgeben lassen                      - use <listname>       get one random item from 'listname'
 - del <Listenname>       Liste löschen                                                  - del <listname>       delete 'listname'
 - back                   Back to the Hauptmenü                                          - back                 back to the main menu
 - exit                   das Programm completely schließen                              - exit                 close the application
-- help                   Hilfe anzeigen                                                 - help                 show this help page
+- help                   Hilfe anzeigen                                                 - help                 show this help message
+\n= Listenmodus wurde eingeleitet =\n\nFolgende Listen wurden gefunden:             \n= Initialize listmode =\n\nFollowing lists were found:
+Bitte gib einen Listennamen an.                                                     Please name a listname.
+Eine Liste mit diesem Namen existiert bereits, willst du sie überschreiben? j/n     A list with this name already exists, do you want to overwrite it? y/n
+Was soll denn alles in der Liste gespeichert sein?\n                                What should be stored in the list?\n
+Überschreiben der Liste abgebrochen.                                                Exited overwriting list.
+Command wurde nicht gefoundet.                                                      Error: Command not found
+Was soll denn alles in der Liste gespeichert sein?\n                                What should be stored in the list?\n
+Bitte gib einen Listennamen an.                                                     Please give a listname.
+Dieser Listenname existiert nicht. Probiere another one.                            A list with this name doesn't exist. Try another name.
+Bitte gib einen Listennamen an.                                                     Please give a listname.
+Die Liste {listname} existiert nicht. (Achte auf mögliche type errors!)             The list {listname} doesn't exist. (Watch for spelling errors!)
+Du bist nun wieder im Listenmodus.                                                  You are in listmode again.
+Bitte gib einen Listennamen an.                                                     Please give a listname.
+Die Liste {listname} existiert nicht. (Achte auf mögliche type errors!)             The list {listname} doesn't exist. (Watch for spelling errors!)
+Bitte gib einen Listennamen an.                                                     Please give a listname.
+Willst du die Liste wirklich löschen? j/n                                           Do you really want to delete the list? y/n
+Alda Malaga, die Liste wurde gelöscht.                                              Well, the list has been deleted.
+Löschvorgang abgebrochen.                                                           Exited deletion.
+Fehler: Command wurde nicht gefoundet.\n\n                                          Error: Command not found\n\n
+Willst du den Listenmodus wirklich beenden? j/n                                     Do you really want to exit listmode? y/n
+Beendigung abgebrochen                                                              Exit existed
+Fehler: Command wurde nicht gefoundet.\n\n                                          Error: Command not found\n\n
+Fehler: Command wurde nicht gefoundet.\n\n                                          Error: Command not found\n\n
 
 
 
@@ -61,6 +84,7 @@ Wer hätte es gedacht, es steht ja sowieso nur das eins Element in der Liste... 
 Sorry, das steht nicht in der Liste. (Achte auf mögliche Schreibfehler!)                Sorry, that is not something from the list. (Check for spelling errors!)
 Es sind noch keine Elemente in der Liste.                                               There are no items in the list yet.
 Bis jetzt steht nur {list[0]} in der Liste.                                            Until now, there only is {list[0]} in the list.
+\nIn der Liste stehen bis jetzt:                                                      \nThese items are in the list so far:
 Valid Befehle:                                                    Valid commands:
 - new <Element>          'Element' zur Liste hinzufügen           - new <item>          add 'item' to the list
 - del <Element>          'Element' aus der Liste entfernen        - del <item>          remove 'item' from the list
@@ -72,9 +96,9 @@ Valid Befehle:                                                    Valid commands
 Bitte gib ein Element zum Hinzufügen an.                          Please name an item to add.
 Bitte gib ein Element zum Entfernen an.                           Please name an item to remove.
 Liste wird überschrieben...                                       List gets overwritten...
-Liste {listname} wurde überschrieben.                             List has been overwritten.
+Liste {listname} wurde überschrieben.                             List {listname} has been overwritten.
 Neue Liste wird angelegt...                                       Creating new list...
-Neue Liste {listname} wurde angelegt.                             Created new list.
+Neue Liste {listname} wurde angelegt.                             Created new list {listname}.
 Liste wurde gespeichert                                           List was saved.
 Valid Befehle:                                                    Valid commands:
 - new <Element>          'Element' zur Liste hinzufügen           - new <item>          add 'item' to the list
@@ -92,7 +116,7 @@ Fehler: Command wurde nicht gefoundet.\n\n                        Error: Command
 
 
 
-init_data_file.py
+init_data_file.py =========================================================================
 Es wurde keine Listen-Datei gefunden. Eine neue wird erstellt.    There was no list-file found. A new one shall be created now.
 {"essen": ["apfel", "birne", "banane"], "beschäftigungen": ["zocken", "anime schauen", "masturbieren"]}       {"food": ["apple", "pear", "banana"], "activity": ["gaming", "watching anime", "masturbating"]}
 Ne äh, irgendwie ging das nicht, mach mal ne eigene, du Kek.            Nope, didn't work for some reason, create one for yourself.
