@@ -18,13 +18,13 @@ Just extract everything from the .zip file (if you didn't do that already) and .
 ## TODO
 - Documentatation
 - command "use" needs renaming
-- Suggestion: Layout(e.g. bigger distance for not found command)
-- Suggestion: colored Intro
+- Suggestion: Layout (e.g. bigger distance for not found command)
+- Suggestion: colored intro
 - Suggestion: progress bar
 - Update lines instead of just printing them new (e.g. progress bar or ">> ")
 
 ## Contributing
-Suggestions are welcome. Please open an Issue on Github if you notice an error (you should explain what you did to be able to reproduce it).
+Suggestions are welcome. Please open an issue on Github if you notice an error (you should explain what you did to be able to reproduce it).
 
 ## License
 All rights reserved.
