@@ -5,19 +5,35 @@ Or the most important question: Which is better, peach or lemon ice tea?
 No prob, as there is this piece of shit now.
 The-for-you-decider!
 
-## Voraussetzungen
+## Requirements
 [Python 3](https://www.python.org/download/releases/3.0/)
 
 ## Installation
 Just extract everything from the .zip file (if you didn't do that already) and ... voilà !
 
 ## Usage
-- Double-click "decide.py"
-- open a CMD or something similiar and execute "decide.py" in there, if you know how to, of course.
+
+### Windows
+- Install Python 3 through the Microsoft Store or from the official Python website. (s. Requirements)
+- Double-click "decide.py".
+- Open a CMD or something similiar and execute "decide.py" in there, if you know how to, of course.
+
+### Linux
+- Install Python 3 through your respective package manager.
+- Execute "decide.py" in an IDE or
+- in the terminal:
+```sh
+$ python decide.py
+```
+or
+```sh
+$ chmod +x decide.py
+$ ./decide.py
+```
 
 ## TODO
 - Documentatation
-- command "use" needs renaming
+- Command "use" needs renaming
 - Suggestion: Layout (e.g. bigger distance for not found command)
 - Suggestion: colored intro
 - Suggestion: progress bar
