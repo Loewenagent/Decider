@@ -11,7 +11,7 @@ The-for-you-decider!
 ## Installation
 ### Windows
 - Install Python 3 through the Microsoft Store or from the official Python website. (s. Requirements)
-- Download the archive from the [main](https://github.com/Loewenagent/Decider/archive/main.zip) the [releases](https://github.com/Loewenagent/Decider/releases) page.
+- Download the archive from the [main](https://github.com/Loewenagent/Decider/archive/main.zip) or the [releases](https://github.com/Loewenagent/Decider/releases) page.
 - Extract it with some archive manager (e.g. Winrar).
 ### Linux
 - Install Python 3 through your respective package manager.
