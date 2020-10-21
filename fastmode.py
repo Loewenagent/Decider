@@ -17,7 +17,7 @@ def start(data_file_path):
     print("\n= Initialize fastmode =\n")
 
     # Method spezific variable
-    liste = []
+    list = []
 
     help()
 
@@ -31,7 +31,7 @@ def start(data_file_path):
                 print("Please name an item to add.")
                 continue
             else:
-                liste = methodes.new_element(liste, user_input)
+                list = methodes.new_item(list, user_input)
 
         # delete item
         elif "del " in user_input:
@@ -39,7 +39,7 @@ def start(data_file_path):
                 print("Please name an item to delete.")
                 continue
             else:
-                liste = methodes.del_element(liste, user_input)
+                list = methodes.del_item(list, user_input)
 
         # save list
         elif "store " in user_input:
@@ -57,7 +57,7 @@ def start(data_file_path):
 
                             print("Saving in progress...")
 
-                            data.update({listname: liste})
+                            data.update({listname: list})
 
                             methodes.save(data, data_file_path)
 
@@ -76,7 +76,7 @@ def start(data_file_path):
 
                     print("Saving in progress...")
 
-                    data.update({user_input: liste})
+                    data.update({user_input: list})
 
                     methodes.save(data, data_file_path)
 
@@ -84,15 +84,15 @@ def start(data_file_path):
 
         # show current list content
         elif user_input == "show":
-            methodes.show(liste)
+            methodes.show(list)
 
         # close editing of list and continue with random selection
         elif user_input == "use":
-            if len(liste) == 0:
+            if len(list) == 0:
                 print("Well, you are a funny person, there are no items in this list yet! Better start adding some...")
             else:
                 # selects a random item
-                methodes.random_selector(liste)
+                methodes.random_selector(list)
                 break
 
         # abort fastmode and return to main menu

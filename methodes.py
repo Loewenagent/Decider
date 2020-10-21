@@ -20,8 +20,8 @@ def show_lists(data):
     if len(data.keys()) == 0:
         print("You did it. You have deleted more lists than you have created. As a result, there are no lists anymore.")
     else:
-        for element in data.keys():
-            print(f"- {element}")
+        for item in data.keys():
+            print(f"- {item}")
 
 # checks if a listname already exists
 def check_listname(listname, data_file_path):
@@ -34,52 +34,52 @@ def check_listname(listname, data_file_path):
         return False
 
 # selects a random item from a list and presents it
-def random_selector(liste):
+def random_selector(list):
     print("\nWell, now we have all items together. Let's get a random item out of that list.")
 
     # Ein zufälliger Index wird ermittelt und das Ergebnis ausgegeben
-    selection = liste[random.randint(0, len(liste) - 1)]
+    selection = list[random.randint(0, len(list) - 1)]
 
     print(f"And the selected item iiiiiiiis: Yay, {selection}! Hooray!\n\nNow have fun with it!")
 
-    if len(liste) == 1:
+    if len(list) == 1:
         print("Oh well, who could have thought that? It's not like there was only one item in the list to begin with... -_-")
 
 # adds a new item to a list
-def new_element(liste, element):
-    element = element.replace("new ", "")
-    liste.append(element)
+def new_item(list, item):
+    item = item.replace("new ", "")
+    list.append(item)
     print(f"{item} was added to the list.")
-    return liste
+    return list
 
 # deletes an item from a list
-def del_element(liste, element):
-    element = element.replace("del ", "")
+def del_item(list, item):
+    item = item.replace("del ", "")
 
-    if element in liste:
-        liste.remove(element)
+    if item in list:
+        list.remove(item)
         print(f"{item} was removed from the list.")
     else:
         print("Sorry, that is not something from the list. (Check for spelling errors!)")
 
-    return liste
+    return list
 
 # shows all items of a list
-def show(liste):
-    if len(liste) == 0:
+def show(list):
+    if len(list) == 0:
         print("There are no items in the list yet.")
-    elif len(liste) == 1:
+    elif len(list) == 1:
         print(f"Until now, there only is {list[0]} in the list.")
     else:
         print("\nThese items are in the list so far:")
 
-        for element in liste:
+        for item in list:
             print(f"- {item}")
 
         print("")
 
 # general method for editing a list
-def edit_list(liste, listname, data, data_file_path):
+def edit_list(list, listname, data, data_file_path):
     print("Valid commands:")
     print("- new <item>          add 'item' to the list")
     print("- del <item>          remove 'item' from the list")
@@ -98,7 +98,7 @@ def edit_list(liste, listname, data, data_file_path):
                 print("Please name an item to add.")
                 continue
             else:
-                liste = new_element(liste, user_input)
+                list = new_item(list, user_input)
 
         # delete an item
         elif "del " in user_input:
@@ -106,22 +106,22 @@ def edit_list(liste, listname, data, data_file_path):
                 print("Please name an item to remove.")
                 continue
             else:
-                liste = del_element(liste, user_input)
+                list = del_item(list, user_input)
 
         # shows all item from a list
         elif user_input == "show":
-            show(liste)
+            show(list)
 
         # save list and return to the listmode menu
         elif user_input == "continue":
             if listname in data:
                 print("List gets overwritten...")
-                data[listname] = liste
+                data[listname] = list
                 print(f"List {listname} has been overwritten.")
 
             else:
                 print("Creating new list...")
-                data.update({listname: liste})
+                data.update({listname: list})
                 print(f"Created new list {listname}.")
 
             save(data, data_file_path)
@@ -154,7 +154,7 @@ def edit_list(liste, listname, data, data_file_path):
         else:
             print("Error: Command not found.\n\n")
 
-    return liste
+    return list
 
 # method to exit the application
 def exit_app():

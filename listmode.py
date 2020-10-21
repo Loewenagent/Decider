@@ -27,7 +27,7 @@ def start(data_file_path):
     while(listmode_flag):
         user_input = input("\n>> ")
 
-        liste = []
+        list = []
 
         # create new list
         if "new " in user_input:
@@ -42,7 +42,7 @@ def start(data_file_path):
                     while(True):
                         if user_input == "j":
                             print("What should be stored in the list?\n")
-                            liste = methodes.edit_list(liste, listname, data, data_file_path)
+                            list = methodes.edit_list(list, listname, data, data_file_path)
                             break
                         elif user_input == "n":
                             print("Exited overwriting list.")
@@ -52,7 +52,7 @@ def start(data_file_path):
 
                 else:
                     print("What should be stored in the list?\n")
-                    liste = methodes.edit_list(liste, listname, data, data_file_path)
+                    list = methodes.edit_list(list, listname, data, data_file_path)
 
         # show all existing lists
         elif "show" == user_input:
@@ -66,8 +66,8 @@ def start(data_file_path):
                 listname = user_input.replace("show ", "")
 
             if methodes.check_listname(listname, data_file_path):
-                liste = data[listname]
-                methodes.show(liste)
+                list = data[listname]
+                methodes.show(list)
             else:
                 print("A list with this name doesn't exist. Try another name.")
 
@@ -80,17 +80,17 @@ def start(data_file_path):
 
                 # checks if the list exists
                 if methodes.check_listname(listname, data_file_path):
-                    liste = data[listname]
+                    list = data[listname]
 
                 else:
                     print(f"A list with this name doesn't exist. Try another name.")
                     continue
 
                 # shows all items in the list
-                methodes.show(liste)
+                methodes.show(list)
 
                 # editing of the list
-                liste = methodes.edit_list(liste, listname, data, data_file_path)
+                list = methodes.edit_list(list, listname, data, data_file_path)
 
                 print("You are in listmode again.")
 
@@ -102,7 +102,7 @@ def start(data_file_path):
                 listname = user_input.replace("use ", "")
 
                 if methodes.check_listname(listname, data_file_path):
-                    methodes.random_selector(liste)
+                    methodes.random_selector(list)
 
                 else:
                     print(f"A list with this name doesn't exist. Try another name.")
