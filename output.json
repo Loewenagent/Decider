@@ -1,1 +1,17 @@
-
+{
+    "de": {
+        "app_open": "\nHallo.\nDu kannst dich also nicht entscheiden. Alles klar.\n",
+        "help_decide": "\nWillst den Schnellmodus verwenden, oder Listen erstellen und bearbeiten?\n- fastmode:      Schnellmodus\n- listmode:      Listenmodus\n- exit:          Beenden\n- help           Hilfe anzeigen\n",
+        "help_fastmode": "Valid Befehle:\n- new <Element>          'Element' zur Liste hinzufügen\n- del <Element>          'Element' aus der Liste entfernen\n- store <Listenname>     Liste als 'Listenname' speichern\n- show                   Liste anzeigen\n- continue               Bearbeitung der Liste beenden und zufälliges Element ausgeben lassen.\n- back                   Back to the Hauptmenü\n- exit                   das Programm completely schließen\n- help                   Hilfe anzeigen\n",
+        "help_listmode": "\nWillst du eine neue Liste anlegen, eine Liste bearbeiten, oder eine Liste löschen?\n- new <Listenname>       neue Liste angelegen\n- show                   alle vorhandenen Listen anzeigen\n- show <Listenname>      Listeninhalt anzeigen\n- edit <Listenname>      Liste bearbeiten\n- use <Listenname>       ein Element aus der Liste ausgeben lassen\n- del <Listenname>       Liste löschen\n- back                   Back to the Hauptmenü\n- exit                   das Programm completely schließen\n- help                   Hilfe anzeigen\n",
+        "enter_fastmode": "\n= Schnellmodus wurde eingeleitet =\n",
+        "enter_listmode": "\n= Listenmodus wurde eingeleitet =\n\nFolgende Listen wurden gefunden:",
+        "name_missing_item": "Bitte gib einen Itemnamen an.",
+        "name_missing_list": "Bitte gib einen Listennamen an.",
+        "list_already_exists": "Eine Liste mit diesem Namen existiert bereits, willst du sie überschreiben? j/n",
+        "saving": "Speichervorgang...",
+        "saved": "Liste {listname} wurde gespeichert.",
+        "invalid_command": "Fehler: Command wurde nicht gefoundet.\n\n"
+    },
+    "en": {}
+}

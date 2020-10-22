@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 # Import-commands =========================================
 import json
@@ -11,6 +11,7 @@ import methodes
 
 # Initialize the path of the data-file
 data_file_path = init_data_file.get_data_file()
+output_file_path = init_data_file.get_data_file()
 
 # Method to start the application =========================
 def start_app():
