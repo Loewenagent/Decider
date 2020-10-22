@@ -37,10 +37,10 @@ def start(data_file_path):
                 listname = user_input.replace("new ", "")
 
                 if methodes.check_listname(listname, data_file_path):
-                    user_input = input("A list with this name already exists, do you want to overwrite it? y/n")
-
                     while(True):
-                        if user_input == "j":
+                        user_input = input("A list with this name already exists, do you want to overwrite it? y/n")
+                        
+                        if user_input == "y":
                             print("What should be stored in the list?\n")
                             list = methodes.edit_list(list, listname, data, data_file_path)
                             break
