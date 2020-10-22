@@ -44,6 +44,7 @@ $ ./decide.py
 - Suggestion: colored intro
 - Suggestion: progress bar
 - Update lines instead of just printing them new (e.g. progress bar or ">> ")
+- Add ability to change language
 
 ## Contributing
 Suggestions are welcome. Please open an issue on Github if you notice an error (you should explain what you did to be able to reproduce it).
