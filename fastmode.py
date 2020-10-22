@@ -49,10 +49,10 @@ def start(data_file_path):
                 listname = user_input.replace("store ", "")
 
                 if methodes.check_listname(listname, data_file_path):
-                    user_input = input("A list with this name already exists. Do you want to overwrite it? y/n ")
-
                     while(True):
-                        if user_input == "j":
+                        user_input = input("A list with this name already exists. Do you want to overwrite it? y/n")
+
+                        if user_input == "y":
                             data = methodes.load(data_file_path)
 
                             print("Saving in progress...")
