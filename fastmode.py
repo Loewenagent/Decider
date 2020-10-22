@@ -76,7 +76,7 @@ def start(data_file_path):
 
                     print("Saving in progress...")
 
-                    data.update({user_input: list})
+                    data.update({listname: list})
 
                     methodes.save(data, data_file_path)
 
@@ -87,7 +87,7 @@ def start(data_file_path):
             methodes.show(list)
 
         # close editing of list and continue with random selection
-        elif user_input == "use":
+        elif user_input == "continue":
             if len(list) == 0:
                 print("Well, you are a funny person, there are no items in this list yet! Better start adding some...")
             else:
