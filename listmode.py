@@ -40,7 +40,7 @@ def start(data_file_path):
                     user_input = input("A list with this name already exists, do you want to overwrite it? y/n")
 
                     while(True):
-                        if user_input == "j":
+                        if user_input == "y":
                             print("What should be stored in the list?\n")
                             list = methodes.edit_list(list, listname, data, data_file_path)
                             break
@@ -120,7 +120,7 @@ def start(data_file_path):
                 while(True):
                     user_input = input(">> ")
 
-                    if user_input == "j":
+                    if user_input == "y":
                         data.pop(listname)
                         methodes.save(data, data_file_path)
                         print("Well, the list has been deleted.")
@@ -140,7 +140,7 @@ def start(data_file_path):
             while(True):
                 user_input = input(">> ")
 
-                if user_input == "j":
+                if user_input == "y":
                     listmode_flag = False
                     break
 

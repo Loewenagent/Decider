@@ -52,7 +52,7 @@ def start(data_file_path):
                     user_input = input("A list with this name already exists. Do you want to overwrite it? y/n ")
 
                     while(True):
-                        if user_input == "j":
+                        if user_input == "y":
                             data = methodes.load(data_file_path)
 
                             print("Saving in progress...")
