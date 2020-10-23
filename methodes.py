@@ -163,7 +163,7 @@ def exit_app():
     while(True):
         user_input = input(">> ")
 
-        if user_input == "j":
+        if user_input == "y":
             print("Well, there goes your application lol.")
             time.sleep(2)
             exit(0)
