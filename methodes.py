@@ -158,19 +158,20 @@ def edit_list(list, listname, data, data_file_path):
 
 # method to exit the application
 def exit_app():
-    print("Do you really want to close the application? y/n")
-
-    while(True):
-        user_input = input(">> ")
-
-        if user_input == "y":
-            print("Well, there goes your application lol.")
-            time.sleep(2)
-            exit(0)
-
-        elif user_input == "n":
-            print("Exit exited")
-            break
-
-        else:
-            print("Error: Command not found.\n\n")
+    # print("Do you really want to close the application? y/n")
+    #
+    # while(True):
+    #     user_input = input(">> ")
+    #
+    #     if user_input == "y":
+    #         print("Well, there goes your application lol.")
+    #         time.sleep(2)
+    #         exit(0)
+    #
+    #     elif user_input == "n":
+    #         print("Exit exited")
+    #         break
+    #
+    #     else:
+    #         print("Error: Command not found.\n\n")
+    exit()
