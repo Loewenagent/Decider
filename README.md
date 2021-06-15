@@ -2,7 +2,7 @@
 You have thousands of things you could do but can't decide it for yourself?
 Dinner will be soon but don't know what to eat?
 Or the most important question: Which is better, peach or lemon ice tea?
-No prob, as there is this piece of shit now.
+No prob, as there is this piece of art now.
 The-for-you-decider!
 
 ## Requirements
